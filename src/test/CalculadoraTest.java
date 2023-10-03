@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import calculadora.Calculadora;
 
 class CalculadoraTest {
 	
@@ -46,17 +47,31 @@ class CalculadoraTest {
 
 	@Test
 	void testResta() {
-		fail("Not yet implemented");
+		int expected = 2;
+		int actual = Calculadora.resta(Value1, Value2);
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	void testMultiplica() {
-		fail("Not yet implemented");
+		int expected = 15;
+		int actual = Calculadora.multiplica(Value1, Value2);
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	void testDivide() {
-		fail("Not yet implemented");
+		int expected = 1;
+		int actual = Calculadora.divide(Value1, Value2);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void testDividepor0() {
+		int expected = -1;
+		Value2 = 0;
+		int actual = Calculadora.divide(Value1, Value2);
+		assertEquals(expected, actual);
 	}
 
 }
